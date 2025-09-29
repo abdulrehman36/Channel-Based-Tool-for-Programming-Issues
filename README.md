@@ -1,0 +1,1 @@
+A full-stack Q&A platform built with ReactJS, Node.js, SQL, Docker, and Git. The application supports user authentication and account creation, with admin-level controls for moderating content. Features include nested replies with a thumbs up/down rating system to encourage community interaction, as well as a search function to filter posts by user, keyword, or ranking.
