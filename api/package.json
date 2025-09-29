@@ -1,0 +1,36 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "wait-on tcp:mysql:3306 && nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
+    "cookie": "^1.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dompurify": "^3.2.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsdom": "^26.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "multer": "^1.4.5-lts.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.0",
+    "nodemon": "^3.1.9",
+    "parser": "^0.1.4",
+    "react-quill": "^2.0.0"
+  },
+  "proxy": "http://localhost:3000",
+  "devDependencies": {
+    "wait-on": "^8.0.3"
+  }
+}

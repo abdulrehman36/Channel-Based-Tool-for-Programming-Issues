@@ -1,0 +1,40 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: lahore12345
+      MYSQL_DATABASE: channel
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d  
+
+
+  backend:
+    build: ./api
+    container_name: backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: mysql              
+      DB_USER: root
+      DB_PASSWORD: lahore12345
+      DB_NAME: channel
+      DB_PORT: 3306
+    depends_on:
+      - mysql
+    volumes:
+    - ./api:/app
+    - ./client/public/upload:/app/client/public/upload
+
+  frontend:
+    build: ./client
+    container_name: frontend
+    restart: always
+    ports:
+      - "5173:5173"  
+    depends_on:
+      - backend
